@@ -1,10 +1,11 @@
 import React from 'react';
 import HeaderStyles from './HeaderStyles';
+import mock from '../../mocks.json'
 
 function Header () {
     return (
         <HeaderStyles>
-            AQUI VAI O HEADER
+            {mock.title}
         </HeaderStyles>
     )
 }
