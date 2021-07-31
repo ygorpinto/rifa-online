@@ -5,7 +5,8 @@ import mock from '../../mocks.json'
 function Header () {
     return (
         <HeaderStyles>
-            {mock.title}
+            <h1>{mock.title}</h1>
+            <p>{mock.headerInfo}</p>
         </HeaderStyles>
     )
 }
