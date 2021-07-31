@@ -1,13 +1,11 @@
 import React from 'react';
 
-
+interface Rifa {
+  owner?:string,
+  number?:number
+};
 
 function App() {
-
-  interface Rifa {
-    owner?:string,
-    number?:number
-  };
 
   const bringAllData = () => {
     // buscar dados no db
