@@ -1,10 +1,11 @@
 import React from 'react';
+import MainStyles from './MainStyles';
 
 function Main () { 
    return (
-       <div>
+       <MainStyles>
            AQUI VAI O MAIN
-       </div>
+       </MainStyles>
    ) 
 }
 
