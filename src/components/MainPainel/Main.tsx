@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import MainStyles from './MainStyles';
 import mock from '../../mocks.json'
 
@@ -24,7 +24,7 @@ function Main () {
     }
 
     const handleForm = (e: any) => {
-        if (e.classList[0] === 'modal') {
+        if (e.target.classList[0] === 'modal') {
             setisOpen(!isOpen);
         };
     }
@@ -34,7 +34,7 @@ function Main () {
        <MainStyles>
            {isOpen ? (
                <div className="modal"
-               onClick={(e) => handleForm(e.target)}
+               onClick={(e) => handleForm(e)}
                >
                    <div className="modal-form">
                     <h1>Seu nùmero é {rifaEl.number}</h1>
