@@ -29,7 +29,6 @@ function App() {
     <>
     <GlobalStyles/>
     <div className="main">
-      <Animated/>
       <Header/>
     </div>
       <Main/>

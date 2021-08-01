@@ -6,20 +6,30 @@ const MainStyles = styled.div`
 height:80vh;
 width:100%;
 
-display:flex;
 align-items:center;
 flex-direction:column;
+flex-wrap: wrap;
 
 font-family: 'Nunito', sans-serif;
 
 .rifasContainer {
 
-    margin-top: 4rem;
-    
-    height:80vh;
-    width:69%;
-    
-    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+
+    .block {
+        align-items:center;
+        justify-content:center;
+        width: 500px;
+    }
+
+    .numbers {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
 }
 
 
@@ -75,7 +85,13 @@ font-family: 'Nunito', sans-serif;
 
 button {
     
-    width:4rem;
+    width:2rem;
+    height:2rem;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
     
     font-family: 'Nunito', sans-serif;
 
@@ -84,7 +100,7 @@ button {
     background-color:#fff;
     border-radius:6px;
     border:2px 2px solid rgba(0,0,0,0.3);
-    margin:1rem;
+    margin:0.4rem;
 
     &:hover {
 

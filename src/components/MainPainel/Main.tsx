@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MainStyles from './MainStyles';
 import mock from '../../mocks.json'
+import Animated from '../Animated/Animated';
 
 
 interface Rifa {
@@ -57,17 +58,21 @@ function Main () {
                </div>
            ) : (null)}
            <div className="rifasContainer">
-           {mock.rifas.map((rifa:Rifa, index:number) => {
-            return (
-                <button 
-                key={index}
-                onClick={() => numberSelector(rifa)}>
-                    <p>{rifa.owner}</p>
-                    <p>{rifa.number}</p>
-                </button>
-                )   
-           })}
+           <div className="block">
+                <Animated/>
            </div>
+           <div className="numbers">
+                 {mock.rifas.map((rifa:Rifa, index:number) => {
+                   return (
+                       <button 
+                       key={index}
+                       onClick={() => numberSelector(rifa)}>
+                           <p>{rifa.number}</p>
+                       </button>
+                       )   
+                  })}
+                </div>
+            </div>  
        </MainStyles>
    ) 
 }
