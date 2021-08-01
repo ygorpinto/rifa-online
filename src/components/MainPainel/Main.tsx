@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MainStyles from './MainStyles';
 import mock from '../../mocks.json'
+
 
 interface Rifa {
     owner?:string,
@@ -9,17 +10,33 @@ interface Rifa {
 
 function Main () { 
 
-    const numberGen = (rifa:Rifa) => {
-        console.log(rifa);
-        
+    const [isOpen, setisOpen] = useState(false);
+    const [isLoading, setisLoading] = useState(false);
+    const [isSelected, setisSelected] = useState(false);
+
+    const numberSelector = (rifa:Rifa) => {
+        if (window.confirm(`Você selecionou o número ${rifa.number} ?`)) {
+            setisOpen(true);
+        }  
     }
 
    return (
        <MainStyles>
+           {isOpen ? (
+               <div className="modal">
+                   <input
+                   type="text"
+                   placeholder="Digite seu código aqui"
+
+                   ></input>
+               </div>
+           ) : (null)}
            <div className="rifasContainer">
-           {mock.rifas.map((rifa:Rifa) => {
+           {mock.rifas.map((rifa:Rifa, index:number) => {
             return (
-                <button onClick={() => numberGen(rifa)}>
+                <button 
+                key={index}
+                onClick={() => numberSelector(rifa)}>
                     <p>{rifa.owner}</p>
                     <p>{rifa.number}</p>
                 </button>
