@@ -18,7 +18,7 @@ function Main () {
     const numberSelector = (rifa:Rifa) => {
         if (window.confirm(`Você selecionou o número ${rifa.number} ?`)) {
             setisOpen(true);
-        }  
+        } 
 
         setRifaEl(rifa);
     }
@@ -29,6 +29,10 @@ function Main () {
         };
     }
 
+
+    const sorteio = () => {
+        alert(`numero sorteado foi ${(Math.floor(100 * Math.random()))}`)
+    } 
 
    return (
        <MainStyles>
