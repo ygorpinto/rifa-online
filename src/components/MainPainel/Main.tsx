@@ -13,12 +13,14 @@ function Main () {
     const [isOpen, setisOpen] = useState(false);
     const [isLoading, setisLoading] = useState(false);
     const [isSelected, setisSelected] = useState(false);
-
+    const [rifaEl,setRifaEl] = useState({} as Rifa);
 
     const numberSelector = (rifa:Rifa) => {
         if (window.confirm(`Você selecionou o número ${rifa.number} ?`)) {
             setisOpen(true);
         }  
+
+        setRifaEl(rifa);
     }
 
     const handleForm = (e: any) => {
@@ -35,10 +37,13 @@ function Main () {
                onClick={(e) => handleForm(e.target)}
                >
                    <div className="modal-form">
+                    <h1>Seu nùmero é {rifaEl.number}</h1>
+                    <p>Digite no campo abaixo o código que te passamos.</p>
                         <input
                         type="text"
                         placeholder="Digite seu código aqui"
                         ></input>
+                    <button>Confirmar</button>
                    </div>
                </div>
            ) : (null)}
