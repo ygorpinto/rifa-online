@@ -24,11 +24,12 @@ function Main () {
        <MainStyles>
            {isOpen ? (
                <div className="modal">
-                   <input
-                   type="text"
-                   placeholder="Digite seu código aqui"
-
-                   ></input>
+                   <div className="modal-form">
+                        <input
+                        type="text"
+                        placeholder="Digite seu código aqui"
+                        ></input>
+                   </div>
                </div>
            ) : (null)}
            <div className="rifasContainer">
