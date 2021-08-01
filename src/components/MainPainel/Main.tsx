@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MainStyles from './MainStyles';
 import mock from '../../mocks.json'
 import Animated from '../Animated/Animated';
+import Loading from '../Loading/Loading';
 
 
 interface Rifa {
@@ -33,13 +34,24 @@ function Main () {
         };
     }
 
-
+    // other place
     const sorteio = () => {
         alert(`numero sorteado foi ${(Math.floor(100 * Math.random()))}`)
     } 
 
+    const confirm = () => {
+        // TODO confirm cod..
+        setisLoading(!isLoading);
+        setTimeout(() => {
+            setisLoading(false);
+        }, 3000);
+
+        setisOpen(!isOpen);
+    }
+
    return (
        <MainStyles>
+           {isLoading ? (<Loading/>) : (null)}
            {isOpen ? (
                <div className="modal"
                onClick={(e) => handleForm(e)}
@@ -53,7 +65,9 @@ function Main () {
                         type="text"
                         placeholder="Digite seu código aqui"
                         ></input>
-                    <button>Confirmar</button>
+                    <button
+                    onClick={confirm}
+                    >Confirmar</button>
                    </div>
                </div>
            ) : (null)}

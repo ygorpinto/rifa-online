@@ -5,7 +5,7 @@ function Loading () {
     return (
         <LoadingStyles>
             <img
-            src="marie2.gif"/>
+            src="marie2.jpg"/>
         </LoadingStyles>
     )
 }
