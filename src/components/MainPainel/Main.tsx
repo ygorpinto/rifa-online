@@ -37,7 +37,9 @@ function Main () {
                onClick={(e) => handleForm(e)}
                >
                    <div className="modal-form">
-                    <h1>Seu nùmero é {rifaEl.number}</h1>
+                    <h2>Olá {rifaEl.owner}</h2>
+                    <h3>Seu nùmero é :</h3>
+                    <h1>{rifaEl.number}</h1>
                     <p>Digite no campo abaixo o código que te passamos.</p>
                         <input
                         type="text"
