@@ -9,7 +9,8 @@ interface Rifa {
 
 function Main () { 
 
-    const numberGen = () => {
+    const numberGen = (rifa:Rifa) => {
+        console.log(rifa);
         
     }
 
@@ -18,7 +19,7 @@ function Main () {
            <div className="rifasContainer">
            {mock.rifas.map((rifa:Rifa) => {
             return (
-                <button>
+                <button onClick={() => numberGen(rifa)}>
                     <p>{rifa.owner}</p>
                     <p>{rifa.number}</p>
                 </button>
