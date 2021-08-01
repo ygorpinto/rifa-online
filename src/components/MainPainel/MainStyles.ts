@@ -3,11 +3,10 @@ import styled from 'styled-components'
 
 const MainStyles = styled.div`
 
-height:80vh;
+height:75vh;
 width:100%;
 
 align-items:center;
-flex-direction:column;
 flex-wrap: wrap;
 
 font-family: 'Nunito', sans-serif;
@@ -18,12 +17,19 @@ font-family: 'Nunito', sans-serif;
     width: 100%;
 
     .block {
-        align-items:center;
-        justify-content:center;
-        width: 500px;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+
+        img {
+            margin-left: 8rem;
+        }
     }
 
     .numbers {
+
+        margin-left: 4rem;
+
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: repeat(10, 1fr);

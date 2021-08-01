@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 const HeaderStyles = styled.header`
-height:20vh;
+height:15h;
 width:100%;
 
 display:flex;
