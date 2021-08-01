@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import MainStyles from './MainStyles';
 import mock from '../../mocks.json'
 
@@ -14,16 +14,26 @@ function Main () {
     const [isLoading, setisLoading] = useState(false);
     const [isSelected, setisSelected] = useState(false);
 
+
     const numberSelector = (rifa:Rifa) => {
         if (window.confirm(`Você selecionou o número ${rifa.number} ?`)) {
             setisOpen(true);
         }  
     }
 
+    const handleForm = (e: any) => {
+        if (e.classList[0] === 'modal') {
+            setisOpen(!isOpen);
+        };
+    }
+
+
    return (
        <MainStyles>
            {isOpen ? (
-               <div className="modal">
+               <div className="modal"
+               onClick={(e) => handleForm(e.target)}
+               >
                    <div className="modal-form">
                         <input
                         type="text"
