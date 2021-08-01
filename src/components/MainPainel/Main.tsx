@@ -14,10 +14,13 @@ function Main () {
     const [isLoading, setisLoading] = useState(false);
     const [isSelected, setisSelected] = useState(false);
     const [rifaEl,setRifaEl] = useState({} as Rifa);
+    const [name, setName] = useState<any>('');
 
     const numberSelector = (rifa:Rifa) => {
         if (window.confirm(`Você selecionou o número ${rifa.number} ?`)) {
             setisOpen(true);
+            const nome = window.prompt('Digite seu nome ..')
+            setName(nome)
         } 
 
         setRifaEl(rifa);
@@ -41,10 +44,10 @@ function Main () {
                onClick={(e) => handleForm(e)}
                >
                    <div className="modal-form">
-                    <h2>Olá {rifaEl.owner}</h2>
+                    <h2>Olá {name}</h2>
                     <h3>Seu nùmero é :</h3>
                     <h1>{rifaEl.number}</h1>
-                    <p>Digite no campo abaixo o código que te passamos.</p>
+                    <p>Digite no campo abaixo o código que te passamos, para confirmarmos você no sorteio.</p>
                         <input
                         type="text"
                         placeholder="Digite seu código aqui"
