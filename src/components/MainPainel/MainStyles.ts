@@ -5,10 +5,20 @@ const MainStyles = styled.div`
 height:80vh;
 width:100%;
 
+.rifasContainer {
+
+}
+
 display:flex;
-justify-content: center;
 align-items:center;
 flex-direction:column;
+
+flex-wrap: wrap;
+
+button {
+    margin:1rem;
+}
+
 `
 
 export default MainStyles;

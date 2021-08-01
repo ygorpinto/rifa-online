@@ -15,6 +15,7 @@ function Main () {
 
    return (
        <MainStyles>
+           <div className="rifasContainer">
            {mock.rifas.map((rifa:Rifa) => {
             return (
                 <button>
@@ -23,6 +24,7 @@ function Main () {
                 </button>
                 )   
            })}
+           </div>
        </MainStyles>
    ) 
 }
