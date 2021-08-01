@@ -44,7 +44,7 @@ function Main () {
         setisLoading(!isLoading);
         setTimeout(() => {
             setisLoading(false);
-        }, 3000);
+        }, 2000);
 
         setisOpen(!isOpen);
     }
