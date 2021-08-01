@@ -10,6 +10,8 @@ display:flex;
 align-items:center;
 flex-direction:column;
 
+font-family: 'Nunito', sans-serif;
+
 .rifasContainer {
 
     margin-top: 4rem;
@@ -50,10 +52,34 @@ flex-direction:column;
         border-radius:10px;
 
         background-color:#fff;
+
+        input {
+            height:2rem;
+            width:15rem;
+            
+            border-radius:6px;
+            border: 1px 1px solid rgba(0,0,0,0.1);
+
+            &::placeholder {
+                text-align: center;
+                font-family: 'Nunito', sans-serif;
+            }
+        }
+
+        button {
+            height:2rem;
+            width:5rem;
+        }
     }
 }
 
 button {
+    
+    width:4rem;
+    
+    font-family: 'Nunito', sans-serif;
+
+    font-weight: 700;
 
     background-color:#fff;
     border-radius:6px;

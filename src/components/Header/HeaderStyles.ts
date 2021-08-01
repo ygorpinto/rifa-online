@@ -9,6 +9,8 @@ display:flex;
 justify-content: center;
 align-items:center;
 flex-direction:column;
+
+font-family: 'Nunito', sans-serif;
 `
 
 export default HeaderStyles;
