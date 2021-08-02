@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MainStyles from './MainStyles';
-import mock from '../../mocks.json'
 import Animated from '../Animated/Animated';
 import Loading from '../Loading/Loading';
+import api from '../../api/api';
 
 
 interface Rifa {
     owner?:string,
-    number?:string
+    number?:number
   };
 
 function Main () { 
@@ -15,8 +15,19 @@ function Main () {
     const [isOpen, setisOpen] = useState(false);
     const [isLoading, setisLoading] = useState(false);
     const [isSelected, setisSelected] = useState(false);
-    const [rifaEl,setRifaEl] = useState({} as Rifa);
+    const [rifaEl,setRifaEl] = useState<any>([]);
+    const [rifaInstance, setRifaInstance] = useState({} as Rifa);
     const [name, setName] = useState<any>('');
+
+    useEffect(()=>{
+        bringAll();
+    },[])
+
+    const bringAll = async () => {
+        const res = await api.get('/')
+        const data = await res.data
+        setRifaEl(data)
+    }
 
     const numberSelector = (rifa:Rifa) => {
         if (window.confirm(`Você selecionou o número ${rifa.number} ?`)) {
@@ -25,7 +36,7 @@ function Main () {
             setName(nome)
         } 
 
-        setRifaEl(rifa);
+        setRifaInstance(rifa);
     }
 
     const handleForm = (e: any) => {
@@ -59,7 +70,7 @@ function Main () {
                    <div className="modal-form">
                     <h2>Olá {name}</h2>
                     <h3>Seu nùmero é :</h3>
-                    <h1>{rifaEl.number}</h1>
+                    <h1>{rifaInstance.number}</h1>
                     <p>Digite no campo abaixo o código que te passamos, para confirmarmos você no sorteio.</p>
                         <input
                         type="text"
@@ -76,7 +87,7 @@ function Main () {
                 <Animated/>
            </div>
            <div className="numbers">
-                 {mock.rifas.map((rifa:Rifa, index:number) => {
+                 {rifaEl?.map((rifa:Rifa, index:number) => {
                    return (
                        <button 
                        key={index}
