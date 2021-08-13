@@ -23,6 +23,9 @@ function Main () {
         bringAll();
     },[])
 
+
+    // trará os dados da api, números e informações da API-rails
+
     const bringAll = async () => {
         const res = await api.get('/')
         const data = await res.data
