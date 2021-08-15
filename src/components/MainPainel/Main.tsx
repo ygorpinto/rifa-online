@@ -56,13 +56,11 @@ function Main () {
         alert(`numero sorteado foi ${(Math.floor(100 * Math.random()))}`)
     } 
 
-    const confirm = () => {
+    const confirm = async () => {
         // TODO confirm cod..
         setisLoading(!isLoading);
-        setTimeout(() => {
-            setisLoading(false);
-        }, 2000);
-
+        await api.post(`/update?number=${rifaInstance.number}&owner=${name}`)
+        setisLoading(false);
         setisOpen(!isOpen);
     }
 
@@ -97,6 +95,7 @@ function Main () {
                    return (
                        <button 
                        key={index}
+                       disabled={rifa.owner ? true : false}
                        onClick={() => numberSelector(rifa)}>
                            <p>{rifa.number}</p>
                        </button>
