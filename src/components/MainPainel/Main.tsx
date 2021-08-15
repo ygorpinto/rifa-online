@@ -14,10 +14,13 @@ function Main () {
 
     const [isOpen, setisOpen] = useState(false);
     const [isLoading, setisLoading] = useState(false);
-    const [isSelected, setisSelected] = useState(false);
     const [rifaEl,setRifaEl] = useState<any>([]);
     const [rifaInstance, setRifaInstance] = useState({} as Rifa);
+
     const [name, setName] = useState<any>('');
+    const [number,setNumber] = useState<any>(null);
+    const [cod,setcod] = useState<any>('');
+
 
     useEffect(()=>{
         bringAll();
