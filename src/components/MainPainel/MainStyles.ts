@@ -110,7 +110,7 @@ button {
 
     &:hover {
 
-        background-color:#bb94c0;
+        background-color:#E56DA5;
         color:#fff;
     }
 }

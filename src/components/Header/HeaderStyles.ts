@@ -12,6 +12,10 @@ flex-direction:column;
 font-weight: 900;
 color:#E56DA5;
 
+h1 {
+    font-family: 'Rampart One', cursive;
+}
+
 font-family: 'Nunito', sans-serif;
 
 
