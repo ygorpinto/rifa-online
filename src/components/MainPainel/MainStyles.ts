@@ -28,6 +28,8 @@ font-family: 'Nunito', sans-serif;
 
     .numbers {
 
+        height: 60vh;
+
         margin-left: 4rem;
 
         display: grid;
