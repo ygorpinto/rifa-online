@@ -15,6 +15,7 @@ function App() {
   body {
     padding:0;
     margin:0;
+    background-image: url('https://i0.wp.com/nileease.com/wp-content/uploads/2020/09/b4581df9e47ce538d21555c94f75da95.gif?fit=1500%2C1000&ssl=1');
   }
   .main {
     display:flex;
