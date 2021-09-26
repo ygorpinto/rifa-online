@@ -66,7 +66,7 @@ function Main () {
           alert('Cadastrado com Sucesso')
         } catch(e:any) {
           console.log(e);
-          alert(e?.message)
+          alert("Código inválido!")
         }
         setisLoading(false);
         setisOpen(!isOpen);
