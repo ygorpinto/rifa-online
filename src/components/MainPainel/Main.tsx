@@ -19,7 +19,7 @@ function Main () {
 
     const [name, setName] = useState<any>('');
     const [number,setNumber] = useState<any>(null);
-    const [cod,setcod] = useState<any>('');
+    const [cod,setCod] = useState<any>('');
 
 
     useEffect(()=>{
@@ -54,12 +54,18 @@ function Main () {
     // other place
     const sorteio = () => {
         alert(`numero sorteado foi ${(Math.floor(100 * Math.random()))}`)
-    } 
+    }
+
 
     const confirm = async () => {
         // TODO confirm cod..
         setisLoading(!isLoading);
-        await api.post(`/update?number=${rifaInstance.number}&owner=${name}`)
+        try {
+          await api.post(`/validate?code=${cod}`)
+          await api.post(`/update?number=${rifaInstance.number}&owner=${name}`)
+        } catch(e:any) {
+          alert(e?.message)
+        }
         setisLoading(false);
         setisOpen(!isOpen);
     }
@@ -75,10 +81,11 @@ function Main () {
                     <h2>Olá {name}</h2>
                     <h3>Seu nùmero é :</h3>
                     <h1>{rifaInstance.number}</h1>
-                    <p>Digite no campo abaixo o código que te passamos, para confirmarmos você no sorteio.</p>
+                    <p>Digite no campo abaixo o código recebido, para confirmarmos você no sorteio.</p>
                         <input
                         type="text"
                         placeholder="Digite seu código aqui"
+                        onChange={e => setCod(e.target.value)}
                         ></input>
                     <button
                     onClick={confirm}
