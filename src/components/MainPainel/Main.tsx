@@ -63,7 +63,9 @@ function Main () {
         try {
           await api.post(`/validate?code=${cod}`)
           await api.post(`/update?number=${rifaInstance.number}&owner=${name}`)
+          alert('Cadastrado com Sucesso')
         } catch(e:any) {
+          console.log(e);
           alert(e?.message)
         }
         setisLoading(false);
